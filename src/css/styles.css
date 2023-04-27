@@ -16,7 +16,7 @@ body {
 #search-box {
   font: inherit;
   padding: 8px;
-  max-width: 320px;
+  width: 500px;
   margin-bottom: 16px;
 
 }
@@ -28,10 +28,12 @@ body {
 .country-list__info{
 	padding: 0;
 	margin: 0;
-	list-style: none;
 	display: flex;
 	align-items: center;
+
+	list-style: none;
 	border-bottom: 2px solid white;
+	 width: fit-content;
 }
 .country-list__photo{
 	display: block;
@@ -47,6 +49,7 @@ body {
 	border-left: 2px solid white;
 }
 .wrapper{
+	display: inline-block;
 	padding: 10px;
 	border: 3px solid white;
 }

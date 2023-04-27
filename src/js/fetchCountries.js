@@ -1,4 +1,3 @@
-import { Notify } from 'notiflix';
 const BASE_URL = `https://restcountries.com/v3.1/`;
 const FLAG = `/name/`;
 export function fetchCountries(name) {

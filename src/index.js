@@ -21,6 +21,7 @@ const countryList = document.querySelector('.country-list')
 const countryInfo = document.querySelector('.country-info')
 
 inputField.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY))
+inputField.placeholder = 'Enter the name of Country'
 
 function onSearch(evt) {
 	const input = evt.target;
@@ -46,7 +47,11 @@ function onSearch(evt) {
 			removeMarkup(countryList)
 			return innerMarkup(countryInfo, createMarkupItem(data))
 		}
-	}).catch(() => Notify.failure("Oops, there is no country with that name"))
+	}).catch(() => {
+		removeMarkup(countryList)
+		removeMarkup(countryInfo)
+		Notify.failure("Oops, there is no country with that name")
+	})
 }
 
 function innerMarkup(place, markup) {
