@@ -31,12 +31,16 @@ function onSearch(evt) {
 	if (trimInput === "") {
 		removeMarkup(countryList)
 		removeMarkup(countryInfo)
+		return
 	}
 
 	fetchCountries(trimInput).then(data => {
 
 		if (data.length > 10) {
-			return Notify.info('Too many matches found. Please enter a more specific name.')
+			Notify.info('Too many matches found. Please enter a more specific name.')
+			removeMarkup(countryList)
+			removeMarkup(countryInfo)
+			return
 		}
 		if (data.length >= 2) {
 			removeMarkup(countryInfo)
